@@ -1,12 +1,8 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-	echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
+require '../dbcon.php';
+if (!isset($_SESSION['adminemail'])) {
+	$_SESSION['error'] = 'Login to continue';
+	header('location: /admin/');
 }
 $queryy=mysqli_query($conn,"Select * from userreg");
 ?>
@@ -61,7 +57,7 @@ $queryy=mysqli_query($conn,"Select * from userreg");
                     </a>
                 </li>
                 <li>
-                <a href="http://localhost/toy/home.php?option=login"><span class="las la-sign-out-alt"></span>
+                <a href="/index.php?option=login"><span class="las la-sign-out-alt"></span>
                         <span>Logout</span>
                     </a>
                 </li>                

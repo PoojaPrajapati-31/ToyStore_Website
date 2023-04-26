@@ -215,7 +215,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="http://localhost/toy/home.php?option=category">
+        <a href="/index.php?option=category">
           View Category
       </div>
     </div>

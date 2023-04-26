@@ -1,15 +1,5 @@
-
-
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
-}
+// require 'dbcon.php';
 // $query=mysqli_query($conn,"select * from userreg where username=$username");
 // $sql = mysqli_fetch_array($query); // fetch data
 	// Check if form has been submitted
@@ -27,7 +17,7 @@ if(!mysqli_select_db($conn , 'toystore'))
 		    // echo "question submitted successfully";
         $message = "Feedback Submitted Successfully..!!";
         echo "<script type='text/javascript'>alert('$message');</script>";
-        header('location:http://localhost/toy/home.php?option=home');
+        header('location:/index.php?option=home');
 		} else {
 		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}
@@ -36,38 +26,6 @@ if(!mysqli_select_db($conn , 'toystore'))
 	// Close database connection
 	mysqli_close($conn);
 	?>
-<html>
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
-
-  <title>Contact </title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-</head>
-<body>
 
   <!-- contact section -->
 

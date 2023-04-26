@@ -1,20 +1,15 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-	echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
+require '../dbcon.php';
+if (!isset($_SESSION['adminemail'])) {
+	$_SESSION['error'] = 'Login to continue';
+	header('location: /admin/');
 }
 $queryy=mysqli_query($conn,"select t_id,a_category,t_amt,image_path,image_desc from toys");
 if(isset($_REQUEST['del']))
 {
 	$del=$_REQUEST['del'];
 	$sql=mysqli_query($conn,"delete from toys where t_id='$del'");
-	$result=mysqli_query($sql);
-	header('location:http://localhost/toy/admin/manage.php');
+	header('location:/admin/manage.php');
 	exit();
 } 
 ?>
@@ -43,7 +38,33 @@ if(isset($_REQUEST['del']))
 	<link rel="stylesheet" href="css/awesome-bootstrap-checkbox.css">
 	<!-- Admin Stye -->
 	<link rel="stylesheet" href="css/admin2.css" type="text/css">
-    
+    <style>
+										thead {
+											display: table-header-group;
+											vertical-align: left;
+											border-color: inherit;
+											
+										}
+
+										</style>
+										<style>
+		.errorWrap {
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #dd3d36;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+.succWrap{
+    padding: 10px;
+    margin: 0 0 20px 0;
+    background: #fff;
+    border-left: 4px solid #5cb85c;
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
+}
+</style>
 </head>
 <body>
     
@@ -80,7 +101,7 @@ if(isset($_REQUEST['del']))
                     </a>
                 </li>
                 <li>
-                    <a href="http://localhost/toy/home.php?option=login"><span class="las la-sign-out-alt"></span>
+                    <a href="/index.php?option=login"><span class="las la-sign-out-alt"></span>
                         <span>Logout</span>
                     </a>
                 </li>
@@ -101,26 +122,7 @@ if(isset($_REQUEST['del']))
                         
             </header>
 
-<style>
-		.errorWrap {
-    padding: 10px;
-    margin: 0 0 20px 0;
-    background: #fff;
-    border-left: 4px solid #dd3d36;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-.succWrap{
-    padding: 10px;
-    margin: 0 0 20px 0;
-    background: #fff;
-    border-left: 4px solid #5cb85c;
-    -webkit-box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-    box-shadow: 0 1px 1px 0 rgba(0,0,0,.1);
-}
-</style>
-</head>
-<body>
+
 	<div class="ts-main-content">
 		<div class="content-wrapper">
 			<div class="container-fluid">
@@ -135,15 +137,7 @@ if(isset($_REQUEST['del']))
 							<div class="panel-body">
 								<table id="mData" class="display table table-striped table-bordered table-hover" cellspacing="0" width="100%">
 									<thead>
-										<script>
-										thead {
-											display: table-header-group;
-											vertical-align: left;
-											border-color: inherit;
-											
-										}
-
-										</script>
+										
 										<tr>
 										    <th>Sr No.</th>
 											<th>Age category</th>

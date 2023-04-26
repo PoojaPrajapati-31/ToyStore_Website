@@ -1,19 +1,11 @@
-  <?php
-  $conn=mysqli_connect('localhost','root','');
-  if(!$conn)
-  {
-    echo 'Not Connected To Server';
-  }
-  if(!mysqli_select_db($conn , 'toystore'))
-  {
-    echo 'Database Not Selected';
-  }
+<?php
+  require_once 'dbcon.php';
 
   //session_start(); 
   if(isset($_POST['login']))
   {
     $username = $_POST['username'];
-    $pass = $_POST['pass'];
+    $pass = md5($_POST['pass']);
     $sql="select * from userreg where username='$username' and password='$pass'";
     $sql1=mysqli_query($conn,$sql);
     $r=mysqli_num_rows($sql1);
@@ -39,13 +31,13 @@
     /* $r=mysqli_num_rows($sql1);
     $result = mysqli_fetch_assoc($sql1);	 */
     if($r==1){	
-      session_start();
+     
       $_SESSION['username']=$username;
         echo "<script>window.alert('Logged in Successfully ');</script>";
         if(isset($_SESSION['username']))
       {
-      echo $_SESSION['username'];
-      header('location:http://localhost/toy/home.php?option=category'); 
+   
+      header('location:/index.php?option=category'); 
     ob_end_flush();
       }
       //	 echo $_SESSION['lemail'];
@@ -106,7 +98,7 @@
                       <button type="submit" class="btn" name="login">User Login</button>
                       <a href="forget.php">Forget Password ?</a><br><br>  
                       <a href="reg.php">Don't have an Account? SignIn</a><br><br><br>
-                      <a href="admin/adminlogin.php">Admin login</a>
+                      <a href="admin/admin.php">Admin login</a>
                   </form>
           </div>
           </div>

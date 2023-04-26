@@ -1,13 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
-}
+require 'dbcon.php';
 $queryy=mysqli_query($conn,"select t_id,a_category,t_amt,image_path from toys order by rent_amt");
 
 $queryy1=mysqli_query($conn,"select distinct category from toys");

@@ -1,13 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-	echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
-}
+require 'dbcon.php';
 
 /*if (isset($_SESSION["fn"])) {
 	$username = $_SESSION["fn"];
@@ -23,7 +15,7 @@ if(!mysqli_select_db($conn , 'toystore'))
 }*/
 
 //session_start();
-//include "home.php";
+//include "index.php";
 
 $sql=mysqli_query($conn,"select * from orders ORDER BY o_id desc limit 1");
 $row=mysqli_fetch_array($sql);
@@ -52,6 +44,8 @@ $cfname=$row1['first_name'];
 $clname=$row1['last_name'];
 //echo $cname; exit;
 
+require 'header.php';
+
 ?>
 <br><br><br>
 <div class="border border-primary container">
@@ -67,7 +61,7 @@ Vasai Road(E)<br>
 </h4></p>
 <p><h4>Name: <?php echo "$cfname";?>&nbsp;<?php echo "$clname";?></h4></p>
 
-<table border="1" align="left" width="100%">
+<table border="1" align="left" width="100%" style="color: #ffffff;">
 <tr>
 <td><h4>Order Id</h4></td>
 <td><h4>Customer Id</h4></td>
@@ -89,8 +83,8 @@ Vasai Road(E)<br>
 </table>
 <br><br><br><br><br>
 <center><h4><font style="color:red">Note:Please take the copy of this Invoice as Booking Recipt.</font></h4><br>
-<button onclick="window.print()">Print this page</button></center><br>
+<button class="no_print" onclick="window.print()">Print this page</button></center><br>
 </div>
 </div>
-</body>
-</html>
+<?php 
+require 'footer.php';

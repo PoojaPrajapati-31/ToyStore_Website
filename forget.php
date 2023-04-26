@@ -1,13 +1,5 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-	echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
-}
+require 'dbcon.php';
 ?>
 <html>
 <head>

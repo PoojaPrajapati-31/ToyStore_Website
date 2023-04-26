@@ -50,7 +50,7 @@
               <br>
             </div>
             <br>
-        <a href="http://localhost/toy/home.php?option=home"><button style="background-color: #3fc1c9; color: black; border: none; padding: 10px 20px; font-size: 16px; text-align: center;"><b>Go to home</b></button>
+        <a href="/index.php?option=home"><button style="background-color: #3fc1c9; color: black; border: none; padding: 10px 20px; font-size: 16px; text-align: center;"><b>Go to home</b></button>
 </a>
           
         

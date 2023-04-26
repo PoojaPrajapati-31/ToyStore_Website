@@ -1,54 +1,11 @@
 <?php 
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-	echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
-}
+require 'dbcon.php';
 
 $queryy=mysqli_query($conn,"select t_id,t_name,a_category,t_amt,image_path,image_desc from toys where a_category='5-7y'");
 
+require 'header.php';
 ?>
-<html>
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/favicon.png" type="">
-
-  <title>5-7 year </title>
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <!--owl slider stylesheet -->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-    
-
-</head>
-
-<body class="sub_page">
   
 
   <!-- shop section -->
@@ -105,7 +62,7 @@ $i++;
    <?php } ?>    
       </div>
       <div class="btn-box">
-        <a href="http://localhost/toy/home.php?option=category">
+        <a href="/index.php?option=category">
           View Category
         </a>
       </div>
@@ -115,6 +72,7 @@ $i++;
   <!-- end shop section -->
 
 
-</body>
+  <?php 
 
-</html>
+require 'footer.php';
+?>

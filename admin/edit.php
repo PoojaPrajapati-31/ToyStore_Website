@@ -1,12 +1,8 @@
 <?php
-$conn=mysqli_connect('localhost','root','');
-if(!$conn)
-{
-echo 'Not Connected To Server';
-}
-if(!mysqli_select_db($conn , 'toystore'))
-{
-	echo 'Database Not Selected';
+require '../dbcon.php';
+if (!isset($_SESSION['adminemail'])) {
+	$_SESSION['error'] = 'Login to continue';
+	header('location: /admin/');
 }
 $t_id = $_GET['t_id'];
 $query=mysqli_query($conn,"select * from toys where t_id=$t_id");

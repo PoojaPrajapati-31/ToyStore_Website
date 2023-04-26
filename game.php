@@ -22,16 +22,12 @@ if (isset($_POST['submit'])) {
     }
 }
 
+require 'header.php';
 ?>
 
 
 
-
-<!DOCTYPE html>
-<html>
-<head>
 	<title>Guess the Number Game</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
 
     <style>
         body {
@@ -63,7 +59,7 @@ button {
 	font-size: 1.2em;
 	border: none;
 	border-radius: 5px;
-	background-color: #3fc1c9;
+	background-color: #203247;
 	color: #fff;
 	cursor: pointer;
 	transition: background-color 0.2s ease;
@@ -75,8 +71,7 @@ hr{
 	width: 50px; 
 }
 </style>
-</head>
-<body>
+
 	<div class="container">
         <h1>Game Time!</h1>
         <br>

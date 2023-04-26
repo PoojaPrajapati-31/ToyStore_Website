@@ -1,7 +1,4 @@
-<?php 
-// session_start();
-// ob_start();
-?>
+
 <html>
 
 <head>
@@ -38,6 +35,57 @@
 </head>
 
 <body>
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <img src="images/hero-bg.png" alt="">
+    </div>
+
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.php"><span>ToyStore</span></a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.php">Home </a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="shop.php">Shop</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="category.php">Category</a>
+                </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.php">Contact</a>
+              </li>
+                
+              <li class="nav-item">
+                <a class="nav-link" href="login.php">Login</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="about.php"> About</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="read.php"></a>
+                </li>
+                
+              
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+      
     <!-- slider section -->
     <section class="slider_section ">
       <div id="customCarousel1" class="carousel slide" data-ride="carousel">
@@ -52,7 +100,7 @@
                       "Start with something simple and small, then expand over time. If people call it a 'toy' you're definitely onto something."
                     </p>
                     <div class="btn-box">
-                      <a href="/index.php?option=category" class="btn1">Shop Now</a>
+                      <a href="category.php" class="btn1">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -364,7 +412,7 @@
                   Free Shiping
                 </h5>
                 <p>
-                 "Starting off your own Shipping business is not so hard. You just need startup costs. Initially, you need a legal license for the business and prepare a proper plan for the business. You need to work on the advertising of your business".
+                 Starting off your own Shipping business is not so hard. You just need startup costs. Initially, you need a legal license for the business and prepare a proper plan for the business. You need to work on the advertising of your business.
                 </p>
               </div>
             </div>
@@ -398,7 +446,7 @@
               We simply need to be in charge of something like one of your sweet grins! Indeed, even our slogan ‘delights for all’ pass on the equivalent, and we plan to accomplish this by offering ‘toys for all, with the goal that the initial 100 years of your adolescence are praised without bounds.
               ‘ToyStore’ Innovations, a web-based shopping gateway, is a selective and definitive goal for a wide range of toys.
             </p>
-            <a href="/index.php?option=about">
+            <a href="read.php">
               Read More
             </a>
           </div>
@@ -589,7 +637,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="/index.php?option=category">
+        <a href="category.php">
           View All Products
         </a>
       </div>
@@ -690,34 +738,35 @@
         <div class="col-lg-7 col-md-6 px-0">
           <div class="map_container">
             <div class="map-responsive">
-              <img src="images/thetoy.jpg" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen>
+              <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&q=Eiffel+Tower+Paris+France" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
             </div>
           </div>
         </div>
         <div class="col-md-6 col-lg-5 px-0">
-          
+          <form action="#">
             <div class="heading_container heading_center">
               <h2 class="">
                 Contact Us
               </h2>
             </div>
             <div>
-            <a href="/index.php?option=contact"><input type="text" placeholder="Name" />
+              <input type="text" placeholder="Name" />
             </div>
             <div>
-            <a href="/index.php?option=contact"><input type="email" placeholder="Email" />
+              <input type="email" placeholder="Email" />
             </div>
             <div>
-            <a href="/index.php?option=contact"><input type="text" placeholder="Phone" />
+              <input type="text" placeholder="Phone" />
             </div>
             <div>
-            <a href="/index.php?option=contact"><input type="text" class="message-box" placeholder="Question" />
+              <input type="text" class="message-box" placeholder="Message" />
             </div>
             <div class="d-flex ">
-            <a href="/index.php?option=contact"><input type="submit" name="submit" value="Send" />
+              <button>
+                SEND
+              </button>
             </div>
-            </div>
-
+          </form>
         </div>
       </div>
     </div>
@@ -726,8 +775,133 @@
   <!-- end contact and map section -->
 
     <!-- main footer section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Location
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +01 1234567890
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  demo@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.instagram.com/__pooja_._3103">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-2 mx-auto info_col">
+          <div class="info_link_box">
+            <h4>
+              Links
+            </h4>
+            <div class="info_links">
+              <a class="active" href="index.php">
+                Home
+              </a>
+              <a class="" href="about.php">
+                About
+              </a>
+              <a class="" href="shop.php">
+                Shop
+              </a>
+                <a class="" href="category.php">
+                    Category
+                </a>
+              <a class="" href="contact.php">
+                Contact
+              </a>
+                <a class="" href="login.php">
+                    Login
+                </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end main footer section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="index.php">ToyStore</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="js/bootstrap.js"></script>
+  <!-- owl slider -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="js/custom.js"></script>
+  <!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
 </body>
 
               </html>
-
-              

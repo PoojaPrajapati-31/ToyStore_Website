@@ -165,7 +165,7 @@
         </div>
       </div>
       <div class="btn-box">
-        <a href="http://localhost/toy/home.php?option=home">
+        <a href="/index.php?option=home">
           Go to home
         </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="game.php">Play Time</a>
       </div>

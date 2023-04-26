@@ -20,13 +20,13 @@
               </li>
               
               <li class="nav-item">
-                <a class="nav-link" href="home.php?option=shop">Shop</a>
+                <a class="nav-link" href="index.php?option=shop">Shop</a>
               </li>
                 <li class="nav-item">
                 <a class="nav-link" href="category.php">Category</a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link" href="home.php?option=contact">Contact</a>
+                <a class="nav-link" href="index.php?option=contact">Contact</a>
               </li>
                 
               <li class="nav-item">
